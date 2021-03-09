@@ -1,0 +1,229 @@
+/* position: relative;
+left: 900px;
+top: -155px; */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #444;
+  background: linear-gradient(to top left, #28b487, #7dd56f);
+  font-family: 'Poppins', sans-serif;
+}
+.input-data {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  padding: 1.3rem 1.9rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+  font-size: 20px;
+  position: relative;
+  left: 800px;
+  top: -200px;
+  border: none;
+}
+.input-data:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.plus-icon {
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  left: 770px;
+  top: -155px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.delete-icon {
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  left: 1000px;
+  top: -215px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.element-content {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 00;
+  color: #fff;
+  padding: 1.6rem 2.1rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+.elements {
+  grid-row: 2 / span 3;
+
+  border-radius: 1rem;
+
+  position: relative;
+  left: -300px;
+}
+.elements-row {
+  padding: 1.05rem 1.15rem;
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid #eee;
+}
+
+.operation {
+  border-radius: 1rem;
+  padding: 0.1rem 0.1rem;
+  position: relative;
+  top: 80px;
+  color: #333;
+}
+.operation--push {
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form__input {
+  width: 20%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  padding: 0.1rem 0.1rem;
+  border-radius: 0.1rem;
+  transition: all 0.3s;
+}
+.form__input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.form__label {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form__btn {
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form__btn:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.logout-timer {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 450;
+}
+
+.timer {
+  font-weight: 800;
+}
+
+.hidden,
+.hiddenWorkout {
+  display: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-image: linear-gradient(to top left, #89ff03, #ff5f03);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+.modalWorkout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-image: linear-gradient(to top left, #20ff03, #ff5303);
+
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.overlayWorkout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 5;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.close-modalWorkout {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.tick {
+  cursor: pointer;
+  border: none;
+  background: none;
+
+  font-size: 1.7rem;
+}
+.cross {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  position: relative;
+  top: -90px;
+  left: 600px;
+}

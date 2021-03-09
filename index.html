@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Shobhit's Target WebApp🎯</title>
+  </head>
+  <body>
+    <form>
+      <input class="input-data" type="text" />
+
+      <!--+ plus-->
+
+      <svg
+        class="plus-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="46"
+        height="46"
+        fill="currentColor"
+        class="bi bi-file-plus"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z"
+        />
+        <path
+          d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"
+        />
+      </svg>
+
+      <!--+ delete-->
+
+      <div class="delete-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="46"
+          height="46"
+          fill="currentColor"
+          class="bi bi-trash"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+          />
+        </svg>
+      </div>
+    </form>
+
+    <!--ELEMENTS-->
+    <div class="elements ">
+      <div class="elements-row">
+        <div class="element-content">Tasks</div>
+      </div>
+    </div>
+
+    <!--NOTIFICATIONS-->
+    <div class="operation operation--push">
+      <h2>&nbsp &nbsp Push Notifications</h2>
+      <form class="form form--push">
+        <label class="form__label form__label--push "
+          >&nbsp &nbsp Task&nbsp</label
+        >
+        <input type="text" class="form__input push-input" />
+        <label class="form__label form__label--push">&nbspMins&nbsp</label>
+        <input type="number" class="form__input form__input--min" />
+        <label class="form__label form__label--push">&nbspSeconds&nbsp</label>
+        <input type="number" class="form__input form__input--sec" />
+        <button class="form__btn form__btn--push">&rarr;</button>
+
+        <!--SESSION TIMEOUT-->
+        <p class="logout-timer">
+          Initial Page Appears in &nbsp;<span class="timer">05:00</span>
+        </p>
+      </form>
+    </div>
+
+    <!-- MODAL WINDOW FOR NOTIFICATIONS-->
+    <div class="modal hidden ">
+      <button class="close-modal">&times;</button>
+      <h1>Here Goes Notifications 😍</h1>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <!-- MODAL WINDOW FOR WORKOUT-->
+    <div class="modalWorkout hiddenWorkout">
+      <h1>Enable Workout🏃‍♂️ Mode?</h1>
+      <p class="tick">✅</p>
+      <p class="cross">❌</p>
+    </div>
+    <div class="overlayWorkout hiddenWorkout"></div>
+
+    <script src="script1.js"></script>
+  </body>
+</html>

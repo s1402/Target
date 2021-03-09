@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styleDerive.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <script defer src="script2.js"></script>
+
+    <title>workout🤸‍♀️ Mode</title>
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <img src="download.png" alt="Logo" class="logo" />
+
+      <!--MUSIC CDN-->
+      <svg
+        class="music"
+        xmlns="http://www.w3.org/2000/svg"
+        width="46"
+        height="46"
+        fill="currentColor"
+        class="bi bi-music-note-beamed"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"
+        />
+        <path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z" />
+        <path
+          d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"
+        />
+      </svg>
+
+      <!--TIMER CDN-->
+      <svg
+        class="timerIcon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="50"
+        height="50"
+        fill="currentColor"
+        class="bi bi-stopwatch"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"
+        />
+        <path
+          d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"
+        />
+      </svg>
+
+      <ul class="workouts">
+        <form class="form hidden">
+          <div class="form__row">
+            <label class="form__label">Weight</label>
+            <input class="form__input form__input--weight" placeholder="kg" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Duration</label>
+            <input class="form__input form__input--hours" placeholder="Hours" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Height</label>
+            <input class="form__input form__input--feet" placeholder="Feet" />
+          </div>
+
+          <button class="form__btn">OK</button>
+        </form>
+
+        <!-- <li class="workout workout--running" data-id="1234567890">
+          <h2 class="workout__title">Running on April 14</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🏃‍♂️</span>
+            <span class="workout__value">5.2</span>
+            <span class="workout__unit">km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">24</span>
+            <span class="workout__unit">min</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">4.6</span>
+            <span class="workout__unit">min/km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">🦶🏼</span>
+            <span class="workout__value">178</span>
+            <span class="workout__unit">spm</span>
+          </div>
+        </li> -->
+      </ul>
+
+      <!-- MODAL WINDOW FOR Music-->
+      <div class="modalMusic hiddenMusic">
+        <h1>Songs In Your Playlist</h1>
+        <p>
+          1&nbsp&nbsp Kiston-Jubin Nautiyal
+        </p>
+
+        <p>
+          2&nbsp&nbsp Bahana-Akull
+        </p>
+
+        <p>
+          3&nbsp&nbsp Waalian-Harnoor
+        </p>
+        <p>
+          4&nbsp&nbsp Make You Mine-PUBLIC
+        </p>
+        <p>
+          5&nbsp&nbsp Khairiyat-Arijit Singh
+        </p>
+        <input type="number" class=" form__input--music" />
+        <!--PLAY BUTTON-->
+        <svg
+          class="play"
+          xmlns="http://www.w3.org/2000/svg"
+          width="56"
+          height="56"
+          fill="currentColor"
+          class="bi bi-play-circle"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"
+          />
+        </svg>
+        <!--PAUSE BUTTON-->
+        <svg
+          class="pause"
+          xmlns="http://www.w3.org/2000/svg"
+          width="56"
+          height="56"
+          fill="currentColor"
+          class="bi bi-pause-circle"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z"
+          />
+        </svg>
+      </div>
+      <div class="overlayMusic hiddenMusic"></div>
+
+      <!-- MODAL WINDOW FOR NOTIFICATIONS-->
+      <div class="modalTimer hiddenTimer ">
+        <h1>Enable Workout Session ⏲</h1>
+        <p class="logout-timer">
+          &nbsp⏳&nbsp&nbsp<span class="timer">00:00</span>&nbsp&nbsp⏳
+        </p>
+        <!--Start BUTTON-->
+        <svg
+          class="start"
+          xmlns="http://www.w3.org/2000/svg"
+          width="56"
+          height="56"
+          fill="currentColor"
+          class="bi bi-file-play-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM6 5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43V5.884z"
+          />
+        </svg>
+        <!--PAUSE BUTTON-->
+        <svg
+          class="pauseTimer"
+          xmlns="http://www.w3.org/2000/svg"
+          width="56"
+          height="56"
+          fill="currentColor"
+          class="bi bi-pause-btn-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M0 12V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm6.25-7C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z"
+          />
+        </svg>
+        <!--STOP BUTTON-->
+        <svg
+          class="stop"
+          xmlns="http://www.w3.org/2000/svg"
+          width="46"
+          height="46"
+          fill="currentColor"
+          class="bi bi-square-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z"
+          />
+        </svg>
+      </div>
+      <div class="overlayTimer hiddenTimer"></div>
+
+      <!--FOOTER-->
+      <p class="copyright">
+        &copy; Copyright by
+        <a
+          class="linkedin-link"
+          target="_blank"
+          href="https://www.linkedin.com/in/shobhit-ranjan-262801161/"
+          >Shobhit Ranjan</a
+        >
+      </p>
+      <h6></h6>
+      <svg
+        class="twitter"
+        xmlns="http://www.w3.org/2000/svg"
+        width="46"
+        height="46"
+        fill="currentColor"
+        class="bi bi-twitter"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+        />
+      </svg>
+
+      <a
+        class="twitter-link"
+        target="_blank"
+        href="https://twitter.com/ShobhitRanjan19"
+        >ShobhitRanjan19</a
+      >
+
+      <svg
+        class="insta"
+        xmlns="http://www.w3.org/2000/svg"
+        width="46"
+        height="46"
+        fill="currentColor"
+        class="bi bi-instagram"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+        />
+      </svg>
+      <a
+        class="insta-link"
+        target="_blank"
+        href="https://www.instagram.com/shobhit_ranjan_/"
+        >shobhit_ranjan_</a
+      >
+    </div>
+
+    <div id="map" class="mapClass"></div>
+  </body>
+</html>
